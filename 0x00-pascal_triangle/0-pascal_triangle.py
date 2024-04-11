@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """AAAA"""
 
-import math
 
 def _factorial(n):
     """AAAA"""
