@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+"""AAAA"""
 import math
 
 def _factorial(n):
+    """AAAA"""
     r = 1
 
     for _ in range(1, n + 1):
@@ -11,6 +13,7 @@ def _factorial(n):
 
 
 def pascal_triangle(n):
+    """AAAAAA"""
     if n <= 0:
         return []
 
