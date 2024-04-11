@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import math
 
 def _factorial(n):
