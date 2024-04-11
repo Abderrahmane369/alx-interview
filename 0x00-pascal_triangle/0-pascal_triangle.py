@@ -1,44 +1,39 @@
 #!/usr/bin/python3
 """AAAA"""
 
-def main():
-    """looooool"""
-    import math
+import math
 
-    def _factorial(n):
-        """AAAA"""
-        r = 1
+def _factorial(n):
+    """AAAA"""
+    r = 1
 
-        for _ in range(1, n + 1):
-            r *= _
+    for _ in range(1, n + 1):
+        r *= _
 
-        return r
+    return r
 
 
-    def pascal_triangle(n):
-        """AAAAAA"""
-        if n <= 0:
-            return []
+def pascal_triangle(n):
+    """AAAAAA"""
+    if n <= 0:
+        return []
 
-        arr = []
+    arr = []
 
-        for i in range(n):
-            _r = []
-            for j in range(n):
-                _r.append(math.floor(_factorial(i) / (_factorial(j) * _factorial(i - j))))
-        
-            for _ in range(n):
-                if 0 in _r:
-                    _r.remove(0)
-        
+    for i in range(n):
+        _r = []
+        for j in range(n):
+            _r.append(math.floor(_factorial(i) / (_factorial(j) * _factorial(i - j))))
     
-            arr.append(_r)
+        for _ in range(n):
+            if 0 in _r:
+                _r.remove(0)
     
-        if n > 1:
-            arr[0].pop()
-        
-        return arr
+        arr.append(_r)
+
+    if n > 1:
+        arr[0].pop()
+    
+    return arr
 
 
-if __name__ == "__main__":
-    main() 
