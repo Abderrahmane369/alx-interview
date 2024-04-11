@@ -7,7 +7,7 @@ def line(n):
     l = [1]
 
     for _ in range(n):
-        l.append(int(l[_] * (n - _) / (_ + 1)))
+        l.append((l[_] * (n - _) // (_ + 1)))
 
     return l
 
