@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """AAAA"""
 
-def _factorial(n):
+def line(n):
     """AAAA"""
-    r = 1
+    l = [1]
 
-    for _ in range(1, n + 1):
-        r *= _
-
-    return r
+    for _ in range(n):
+        l.append(int(l[_] * (n - _) / (_ + 1)))
+    
+    return l
 
 
 def pascal_triangle(n):
@@ -19,19 +19,7 @@ def pascal_triangle(n):
     arr = []
 
     for i in range(n):
-        _r = []
-        for j in range(n):
-            _r.append(int(_factorial(i) / (_factorial(j) * _factorial(i - j))))
-    
-        for _ in range(n):
-            if 0 in _r:
-                _r.remove(0)
-    
-        arr.append(_r)
-
-    if n > 1:
-        arr[0].pop()
+        arr.append(line(i))
     
     return arr
-
 
