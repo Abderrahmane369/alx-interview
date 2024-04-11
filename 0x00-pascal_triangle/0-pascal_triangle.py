@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """AAAA"""
 
-
 def _factorial(n):
     """AAAA"""
     r = 1
@@ -22,7 +21,7 @@ def pascal_triangle(n):
     for i in range(n):
         _r = []
         for j in range(n):
-            _r.append(math.floor(_factorial(i) / (_factorial(j) * _factorial(i - j))))
+            _r.append(int(_factorial(i) / (_factorial(j) * _factorial(i - j))))
     
         for _ in range(n):
             if 0 in _r:
