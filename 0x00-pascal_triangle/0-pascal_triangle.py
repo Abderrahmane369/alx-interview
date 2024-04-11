@@ -10,6 +10,9 @@ def _factorial(n):
 
 
 def pascal_triangle(n):
+    if n <= 0:
+        return []
+
     arr = []
 
     for i in range(n):
