@@ -10,8 +10,8 @@ def canUnlockAll(boxes):
             if k in boxes[box] and box != k:
                 flag = True
                 break
-        
+
         if not flag:
             return False
-    
+
     return True
