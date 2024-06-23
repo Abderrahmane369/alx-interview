@@ -8,18 +8,17 @@ const argv = process.argv;
 request(`${url}films/${argv[2]}`, {json: true}, (e, r, b) => {
 	if (e || r.statusCode !== 200) return;
 
-	function recurFetch(i, chrtrs) {
-		if (i >= chrtrs.length) return;
 
-		request(chrtrs[i], {json:true}, (e_, r_, b_) => {
-			if (e_ || r_.statusCode !== 200) return;
+	const characterNames = [];
 
-			console.log(b_.name);
+	b.characters.forEach(url => {
+		request(url, {json: true}, (err, res, body)=>{
+			characterNames.push(body.name);
+
+			if (characterNames.length === b.characters.length) {
+				characterNames.forEach(name => console.log(name));
+			}
 		})
-
-		recurFetch(i + 1, chrtrs);
-	}
-
-	recurFetch(0, b.characters);
+	})
 });
 
