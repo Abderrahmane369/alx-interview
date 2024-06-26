@@ -2,40 +2,44 @@
 """monoga"""
 
 
-def island_perimeter(grid):
-    """
-    Calculate the perimeter of the island described in the grid.
+def unidimenseV(grid):
+    """LOGMON"""
+    perlist = []
+    a = 0
 
-    :param grid: List[List[int]] - A rectangular grid where each cell is either 0 (water) or 1 (land).
-    :return: int - The perimeter of the island.
-    """
+    for _ in range(len(grid[0])):
+        a = 0
+        for __ in range(len(grid)):
+            if grid[__][_] in {0, 1}:
+                a |= grid[__][_]
+        perlist.append(a)
+
+    return perlist
+
+
+def unidimenseH(grid):
+    """lllll"""
+    perlist = []
+    a = 0
+
+    for _ in range(len(grid)):
+        a = 0
+        for __ in range(len(grid[0])):
+            if grid[_][__] in {0, 1}:
+                a |= grid[_][__]
+        perlist.append(a)
+
+    return perlist
+
+
+def island_perimeter(grid):
+    """HELLO"""
+
     if not grid or not grid[0]:
         return 0
-
+    
+    # Check if the grid size exceeds the maximum allowed
     if len(grid) > 100 or len(grid[0]) > 100:
         raise ValueError("Grid dimensions exceed the maximum allowed size.")
 
-    horiz_perimeter = 0
-    vert_perimeter = 0
-
-    for row in grid:
-        prev_cell_is_land = False
-        for cell in row:
-            if cell == 1:
-                if not prev_cell_is_land:
-                    horiz_perimeter += 1
-                prev_cell_is_land = True
-            else:
-                prev_cell_is_land = False
-
-    for col_index in range(len(grid[0])):
-        prev_row_is_land = False
-        for row in grid:
-            if row[col_index] == 1:
-                if not prev_row_is_land:
-                    vert_perimeter += 1
-                prev_row_is_land = True
-            else:
-                prev_row_is_land = False
-
-    return 2 * (horiz_perimeter + vert_perimeter)
+    return (sum(unidimenseH(grid)) + sum(unidimenseV(grid))) * 2
