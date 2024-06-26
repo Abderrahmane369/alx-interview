@@ -2,22 +2,40 @@
 """monoga"""
 
 
+def unidimenseV(grid):
+    """LOGMON"""
+    perlist = []
+    a = 0
+
+    for _ in range(len(grid[0])):
+        a = 0
+        for __ in range(len(grid)):
+            if grid[__][_] in {0, 1}:
+                a |= grid[__][_]
+        perlist.append(a)
+
+    return perlist
+
+
+def unidimenseH(grid):
+    """lllll"""
+    perlist = []
+    a = 0
+
+    for _ in range(len(grid)):
+        a = 0
+        for __ in range(len(grid[0])):
+            if grid[_][__] in {0, 1}:
+                a |= grid[_][__]
+        perlist.append(a)
+
+    return perlist
+
+
 def island_perimeter(grid):
-    """Calculate the perimeter of the island in the grid."""
-    perimeter = 0
-    for i in range(len(grid)):
-        for j in range(len(grid[0])):
-            if grid[i][j] == 1:
-                # Check top
-                if i == 0 or grid[i-1][j] == 0:
-                    perimeter += 1
-                # Check bottom
-                if i == len(grid)-1 or grid[i+1][j] == 0:
-                    perimeter += 1
-                # Check left
-                if j == 0 or grid[i][j-1] == 0:
-                    perimeter += 1
-                # Check right
-                if j == len(grid[0])-1 or grid[i][j+1] == 0:
-                    perimeter += 1
-    return perimeter
+    """HELLO"""
+
+    if len(grid) > 100 or len(grid[0]) > 100:
+        return
+
+    return (sum(unidimenseH(grid)) + sum(unidimenseV(grid))) * 2
