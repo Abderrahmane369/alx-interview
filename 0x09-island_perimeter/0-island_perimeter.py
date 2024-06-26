@@ -32,4 +32,8 @@ def unidimenseH(grid):
 
 def island_perimeter(grid):
     """HELLO"""
+    
+    if len(grid) > 100 or len(grid[0]) > 100:
+        return;
+
     return (sum(unidimenseH(grid)) + sum(unidimenseV(grid))) * 2
