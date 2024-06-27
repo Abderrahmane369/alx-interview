@@ -35,11 +35,7 @@ def unidimenseH(grid):
 def island_perimeter(grid):
     """HELLO"""
 
-    if not grid or not grid[0]:
-        return 0
-    
-    # Check if the grid size exceeds the maximum allowed
     if len(grid) > 100 or len(grid[0]) > 100:
-        raise ValueError("Grid dimensions exceed the maximum allowed size.")
+        return
 
     return (sum(unidimenseH(grid)) + sum(unidimenseV(grid))) * 2
