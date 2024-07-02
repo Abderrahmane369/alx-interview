@@ -4,8 +4,11 @@
 
 def isWinner(x, nums):
     """andromidia"""
-    rounds = []
+    
+    if x > len(nums):
+        return None
 
+    rounds = []
     for _1 in range(x):
         n = nums[_1]
         prime = [True for i in range(n + 1)]
@@ -23,5 +26,7 @@ def isWinner(x, nums):
 
     if rounds.count(0) > rounds.count(1):
         return "Ben"
-    else:
+    elif rounds.count(1) > rounds.count(0):
         return "Maria"
+    else:
+        return None
