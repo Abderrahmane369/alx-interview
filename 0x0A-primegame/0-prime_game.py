@@ -4,7 +4,7 @@
 
 def isWinner(x, nums):
     """andromidia"""
-    
+
     if x > len(nums):
         return None
 
