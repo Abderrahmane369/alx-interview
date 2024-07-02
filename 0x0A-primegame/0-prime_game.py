@@ -17,12 +17,9 @@ def isWinner(x, nums):
                     prime[i] = False
             p += 1
 
-        _prime = prime.copy()
-        for d in range(2, n+1):
-            if not prime[d]:
-                _prime.pop(d)
+        prime_count = sum(1 for _ in range(2, n+1) if prime[_])
 
-        rounds.append(len(_prime) % 2)
+        rounds.append(prime_count % 2)
 
     if rounds.count(0) > rounds.count(1):
         return "Ben"
